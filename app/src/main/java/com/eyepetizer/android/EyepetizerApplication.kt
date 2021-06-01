@@ -41,6 +41,11 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer
  */
 class EyepetizerApplication : Application() {
 
+    /**
+     * des : init 关键字 初始化块 （initializer block）  顺序执行
+     * 主构造的参数可以在 init 中使用
+     *
+    */
     init {
         SmartRefreshLayout.setDefaultRefreshInitializer { context, layout ->
             layout.setEnableLoadMore(true)
@@ -80,6 +85,15 @@ class EyepetizerApplication : Application() {
         }
     }
 
+    /**
+     * des : companion 关键字 伴生对象 替代JAVA 中的 static 修饰符
+     * 伴生对象是实际对象的单例实例，
+     * 允许类名访问伴生对象的内容（如果伴生对象存在一个特定的类中）
+     * 伴生对象中的变量 相当于 常量
+     * Lateinit 关键字  变量不需要初始化，在使用变量时不需要加上？或!! 操作符，在第一次使用时保证变量赋值，
+     * 不然会出现空指针异常。
+     *
+    */
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context

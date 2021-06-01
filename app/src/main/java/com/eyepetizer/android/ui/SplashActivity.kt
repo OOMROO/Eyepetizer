@@ -45,6 +45,9 @@ class SplashActivity : BaseActivity() {
         get() = _binding!!
 
     private val splashDuration = 3 * 1000L
+    /**
+     * des : by lazy 变量第一次使用时会执行代码块中的代码为变量初始化，再次使用时会使用上次的赋值，使用时确保代码块中的用到的类或方法已经初始化。
+    */
 
     private val alphaAnimation by lazy {
         AlphaAnimation(0.5f, 1.0f).apply {
@@ -118,6 +121,9 @@ class SplashActivity : BaseActivity() {
         /**
          * 是否首次进入APP应用
          */
+        /**
+         * des : 属性的 get() set() 方法
+        */
         var isFirstEntryApp: Boolean
             get() = DataStoreUtils.readBooleanData("is_first_entry_app", true)
             set(value) {

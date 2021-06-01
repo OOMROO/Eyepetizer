@@ -248,6 +248,9 @@ class MainActivity : BaseActivity() {
         })
     }
 
+    /**
+     * des : 伴生对象中的方法 相当于 JAVA中的静态方法
+    */
     companion object {
 
         fun start(context: Context) {

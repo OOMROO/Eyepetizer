@@ -42,6 +42,8 @@ import java.lang.ref.WeakReference
  *
  * @author vipyinzhiwei
  * @since  2020/4/29
+ *
+ * open 关键字 表示该类是可继承的 可用在 类，属性，方法上
  */
 @SuppressLint("Registered")
 open class BaseActivity : AppCompatActivity() {
@@ -57,10 +59,13 @@ open class BaseActivity : AppCompatActivity() {
     protected var activity: Activity? = null
 
     /** 当前Activity的弱引用，防止内存泄露  */
+    /**
+     * des : WeakRreference<T> 弱引用
+    */
     private var activityWR: WeakReference<Activity>? = null
 
     /**
-     * 日志输出标志
+     * 日志输出标志 this.javaClass.simpleName
      */
     protected val TAG: String = this.javaClass.simpleName
 
